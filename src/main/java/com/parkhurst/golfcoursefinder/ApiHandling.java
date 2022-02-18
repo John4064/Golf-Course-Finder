@@ -9,6 +9,7 @@ import java.io.IOException;
 public class ApiHandling {
 
     public static String courseLookup() throws IOException {
+        //Setup a properties Folder
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
