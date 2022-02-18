@@ -5,6 +5,9 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+/**
+ * @author John parkhurst
+ */
 
 public class ApiHandling {
 

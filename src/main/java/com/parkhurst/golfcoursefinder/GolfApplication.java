@@ -8,12 +8,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
-
+/**
+ * @author John parkhurst
+ */
 public class GolfApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GolfApplication.class.getResource("main-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("Golf Finder");
         stage.setResizable(false);
         //Icon was downloaded https://icons8.com/icon/b6RClyMtZuOc/golf"
