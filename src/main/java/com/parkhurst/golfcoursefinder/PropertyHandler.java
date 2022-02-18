@@ -17,6 +17,7 @@ public class PropertyHandler {
             Properties prop = new Properties();
             String propFileName = "config.properties";
 
+
             inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
 
             if (inputStream != null) {
@@ -24,8 +25,6 @@ public class PropertyHandler {
             } else {
                 throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
             }
-
-            Date time = new Date(System.currentTimeMillis());
 
             // get the property value and print it out
             String user = prop.getProperty("username");

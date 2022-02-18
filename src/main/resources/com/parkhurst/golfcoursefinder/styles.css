@@ -1,4 +1,23 @@
+/*https://colors.muz.li/palette/f7a400/3a9efd/3e4491/292a73/1a1b4b Color Palette plus #e55555*/
 .root{
-    -fx-background-color: #420f0f;
+    -fx-background-color: #1a1b4b;
     -fx-font-family: Waseem;
+    -fx-border-color: #3e4491;
+    -fx-text-fill: #e55555;
+}
+
+.button{
+    -fx-font-size: 24px;
+    -fx-background-color: #3e4491;
+}
+.label{
+
+}
+#toolB {
+    -fx-background-color: #1a1b4b;
+    /*#292a73*/
+}
+#table{
+    -fx-background-color: #292a73;
+    -fx-text-fill: #e55555;
 }
