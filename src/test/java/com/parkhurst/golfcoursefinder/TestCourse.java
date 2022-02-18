@@ -4,8 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import com.parkhurst.golfcoursefinder.Course.*;
-class CourseTest {
+
+class TestCourse {
     Course testCourse;
     @BeforeEach
     void setUp() {
