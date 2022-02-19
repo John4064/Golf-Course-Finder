@@ -11,7 +11,8 @@
 
 .button{
     -fx-font-size: 24px;
-    -fx-background-color: #3e4491;
+    -fx-background-color: #1a1b4b;
+
     -fx-text-fill: #e55555;
 }
 .table-view{
@@ -20,6 +21,8 @@
 }
 .table-view .column-header {
     -fx-background-color: #3e4491;
+    -fx-font-size: 12;
+    -fx-color-label-visible: red;
 }
 .table-view .column-header-background .filler {
     -fx-background-color: #3e4491;
@@ -29,10 +32,10 @@
     -fx-padding: 2 0 2 10px;
 }
 .table-view .virtual-flow .scroll-bar:vertical .thumb{
-    -fx-background-color:  linear-gradient(to bottom, #1dbbdd44, #93f9b944);
+    -fx-background-color: linear-gradient(to bottom, #1a1b4b, #3e4491);
 }
 .table-view .virtual-flow .scroll-bar:horizontal .thumb {
-    -fx-background-color:  linear-gradient(to right, #1dbbdd44, #93f9b944);
+    -fx-background-color: linear-gradient(to bottom, #1a1b4b, #3e4491);
 }
 
 #titleRect{
@@ -41,7 +44,7 @@
     -fx-stroke-width: 1;
 }
 #toolB {
-    -fx-background-color: #1a1b4b;
+    -fx-background-color: linear-gradient(to bottom, #373c82, #3b3f8a);
     /*#292a73*/
 }
 
