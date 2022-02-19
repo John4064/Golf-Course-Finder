@@ -1,4 +1,52 @@
+/*https://colors.muz.li/palette/f7a400/3a9efd/3e4491/292a73/1a1b4b Color Palette plus #e55555*/
+/*    -fx-background-color: #1a1b4b;
+*/
 .root{
-    -fx-background-color: #420f0f;
+
+    -fx-background-color: linear-gradient(to bottom, #1a1b4b, #93f9b944);
     -fx-font-family: Waseem;
+    -fx-border-color: #3e4491;
+    -fx-text-fill: #e55555;
+}
+
+.button{
+    -fx-font-size: 24px;
+    -fx-background-color: #3e4491;
+    -fx-text-fill: #e55555;
+}
+.table-view{
+    -fx-background-color: #292a73;
+    -fx-text-fill: #e55555;
+}
+.table-view .column-header {
+    -fx-background-color: #3e4491;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: #3e4491;
+}
+.table-view .table-cell{
+    -fx-border-color: green;
+    -fx-padding: 2 0 2 10px;
+}
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  linear-gradient(to bottom, #1dbbdd44, #93f9b944);
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right, #1dbbdd44, #93f9b944);
+}
+
+#titleRect{
+    -fx-fill: #3e4491;
+    -fx-stroke: #e55555;
+    -fx-stroke-width: 1;
+}
+#toolB {
+    -fx-background-color: #1a1b4b;
+    /*#292a73*/
+}
+
+#title{
+    -fx-text-fill: #e55555;
+    -fx-font-family: Bahnschrift;
+    -fx-font-size: 18;
 }

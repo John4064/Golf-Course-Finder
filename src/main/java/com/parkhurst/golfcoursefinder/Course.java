@@ -1,4 +1,10 @@
 package com.parkhurst.golfcoursefinder;
+
+/**
+ * @author John parkhurst
+ */
+
+
 //This will be the course object
 public class Course {
     protected String name;
