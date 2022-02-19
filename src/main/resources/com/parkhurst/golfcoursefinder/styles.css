@@ -22,7 +22,10 @@
 .table-view .column-header {
     -fx-background-color: #3e4491;
     -fx-font-size: 12;
-    -fx-color-label-visible: red;
+    -fx-border-color: #e55555;
+}
+.table-view .column-header .label {
+    -fx-text-fill: #e55555;
 }
 .table-view .column-header-background .filler {
     -fx-background-color: #3e4491;
@@ -47,7 +50,6 @@
     -fx-background-color: linear-gradient(to bottom, #373c82, #3b3f8a);
     /*#292a73*/
 }
-
 #title{
     -fx-text-fill: #e55555;
     -fx-font-family: Bahnschrift;
