@@ -1,3 +1,4 @@
+/*https://colors.muz.li/palette/f7a400/3a9efd/3e4491/292a73/1a1b4b Color Palette plus #e55555*/
 .root{
     -fx-background-color: #1a1b4b;
     -fx-font-family: Waseem;
@@ -8,15 +9,30 @@
 .button{
     -fx-font-size: 24px;
     -fx-background-color: #3e4491;
+    -fx-text-fill: #e55555;
 }
-.label{
-
+.table-view{
+    -fx-background-color: #292a73;
+    -fx-text-fill: #e55555;
+}
+.table-view .column-header {
+    -fx-background-color: #3e4491;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: #3e4491;
+}
+#titleRect{
+    -fx-fill: #3e4491;
+    -fx-stroke: #e55555;
+    -fx-stroke-width: 1;
 }
 #toolB {
     -fx-background-color: #1a1b4b;
     /*#292a73*/
 }
-#table{
-    -fx-background-color: #292a73;
+
+#title{
     -fx-text-fill: #e55555;
+    -fx-font-family: Bahnschrift;
+    -fx-font-size: 18;
 }

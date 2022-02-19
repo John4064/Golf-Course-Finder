@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:id="mainpane" prefHeight="480.0" prefWidth="640.0" stylesheets="@styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.parkhurst.golfcoursefinder.MainController">
+<AnchorPane fx:id="mainpane" prefHeight="480.0" prefWidth="640.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.parkhurst.golfcoursefinder.MainController">
 
     <Label fx:id="welcomeText" />
    <ImageView fitHeight="45.0" fitWidth="24.0" layoutX="14.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
@@ -32,9 +32,9 @@
    </ImageView>
    <TableView fx:id="table" layoutX="110.0" layoutY="66.0" prefHeight="240.0" prefWidth="420.0">
      <columns>
-       <TableColumn prefWidth="75.0" text="C1" />
-       <TableColumn prefWidth="75.0" text="C2" />
-         <TableColumn prefWidth="75.0" text="C3" />
+       <TableColumn prefWidth="90.0" text="Course Name" />
+       <TableColumn prefWidth="60.0" text="Zip Code" />
+         <TableColumn prefWidth="75.0" text="Distance" />
      </columns>
    </TableView>
    <ToolBar fx:id="toolB" layoutX="110.0" layoutY="385.0" prefHeight="61.0" prefWidth="420.0">
@@ -43,6 +43,7 @@
           <Button fx:id="submitB" onAction="#onHelloButtonClick" prefHeight="46.0" prefWidth="120.0" text="Submit" />
      </items>
    </ToolBar>
-   <TextArea layoutX="219.0" layoutY="316.0" prefHeight="61.0" prefWidth="203.0" />
+   <TextArea layoutX="219.0" layoutY="317.0" prefHeight="61.0" prefWidth="203.0" />
    <Rectangle fx:id="titleRect" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" layoutX="80.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
+   <Label fx:id="title" layoutX="246.0" layoutY="26.0" text="Golf Course Finder" />
 </AnchorPane>
