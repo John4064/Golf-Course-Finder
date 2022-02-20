@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<?import javafx.scene.control.skin.TableHeaderRow?>
 <AnchorPane fx:id="mainpane" prefHeight="480.0" prefWidth="640.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.parkhurst.golfcoursefinder.MainController">
 
     <Label fx:id="welcomeText" />
@@ -33,9 +32,9 @@
    </ImageView>
    <TableView fx:id="table" layoutX="110.0" layoutY="66.0" prefHeight="240.0" prefWidth="420.0">
      <columns>
-       <TableColumn prefWidth="90.0" text="Course Name" />
-       <TableColumn prefWidth="60.0" text="Zip Code" />
-         <TableColumn prefWidth="75.0" text="Distance" />
+       <TableColumn fx:id="nameCol" prefWidth="90.0" text="Course Name" />
+       <TableColumn fx:id="zipCol" prefWidth="60.0" text="Zip Code" />
+         <TableColumn fx:id="distCol" prefWidth="76.0" text="Distance" />
      </columns>
    </TableView>
    <ToolBar fx:id="toolB" layoutX="110.0" layoutY="385.0" prefHeight="61.0" prefWidth="420.0">
