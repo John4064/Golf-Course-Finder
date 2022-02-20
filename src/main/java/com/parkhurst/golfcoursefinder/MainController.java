@@ -45,23 +45,18 @@ public class MainController {
         */
         PropertyHandler testHand = new PropertyHandler();
         //System.out.println(testHand.getPropValues());
-        table.setRowFactory(tableView -> {
-            TableRow<Course> row = new TableRow<>();
-            return row;
-        });
-        //table.getItems().addAll(new Course(("Winged foot","06820",3.2F));
-
-
-        table.getItems().addAll(new Course("Jacob", "Smith", 3),
-                new Course("Isabella", "Johnson", 4),
-                new Course("Ethan", "Williams", 5),
-                new Course("Emma", "Jones", 6),
-                new Course("Michael", "Brown", 7));
-        nameCol.setCellValueFactory(new PropertyValueFactory<Course, String>("courseName"));
-        zipCol.setCellValueFactory(new PropertyValueFactory<Course, String>("courseZip"));
-        distCol.setCellValueFactory(new PropertyValueFactory<Course, String>("distanceTo "));
-        table.getColumns().addAll(Arrays.asList(nameCol,zipCol,distCol));
 
         welcomeText.setText("Kobe Bryant in Prime");
     }
+    protected void setTable(){
+        table.getItems().addAll(new Course("Winged Foot", "06820", 3),
+                new Course("Pebble Beach", "06902", 4),
+                new Course("Oak Hills", "02131", 5),
+                new Course("Willow Brook", "04321", 6),
+                new Course("Sterling Farms", "09001", 7));
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        zipCol.setCellValueFactory(new PropertyValueFactory<Course, String>("zipcode"));
+        distCol.setCellValueFactory(new PropertyValueFactory<Course, String>("distance"));
+    }
+
 }
