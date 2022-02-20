@@ -5,6 +5,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.Objects;
+
 /**
  * @author John parkhurst
  */
@@ -23,6 +25,6 @@ public class ApiHandling {
                 .build();
 
         Response response = client.newCall(request).execute();
-        return "";
+        return Objects.requireNonNull(response.body()).string();
     }
 }
