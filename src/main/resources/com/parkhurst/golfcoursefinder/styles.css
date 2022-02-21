@@ -15,6 +15,14 @@
 
     -fx-text-fill: #e55555;
 }
+.button:hover {
+    -fx-background-color: #1c1d52;
+    -fx-scale-y: 1.1;
+}
+.button:pressed {
+    -fx-background-color: #3e4491;
+    -fx-scale-y: 1.1;
+}
 .table-view{
     -fx-background-color: #292a73;
     -fx-text-fill: #e55555;
