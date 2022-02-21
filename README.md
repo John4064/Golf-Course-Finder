@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/john4064/Golf-Course-Finder">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="/src/main/resources/com/parkhurst/golfcoursefinder/golf.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Golf-Course-Finder</h3>
