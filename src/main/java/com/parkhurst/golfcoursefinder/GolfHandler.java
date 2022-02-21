@@ -11,7 +11,7 @@ import java.util.Objects;
  * @author John parkhurst
  */
 
-public class ApiHandling {
+public class GolfHandler {
 
     public static String courseLookup() throws IOException {
         //Setup a properties Folder
