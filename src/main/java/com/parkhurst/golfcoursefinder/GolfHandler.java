@@ -47,8 +47,8 @@ public class GolfHandler extends Handler {
 
     public ArrayList<Course> courseLookup(String[] longLatArr) throws IOException {
         //Setup a properties Folder
-        latitude = longLatArr[0];
-        longitude = longLatArr[1];
+        latitude = longLatArr[1];
+        longitude = longLatArr[0];
         url += urlBuilder();
         String preParse;
         try {
@@ -58,22 +58,25 @@ public class GolfHandler extends Handler {
             return null;
         }
         ArrayList<Course> courseList = new ArrayList<Course>();
-        final JSONArray obj = new JSONArray(preParse);
+
+        //{"courses": [{"name": "Poppy Hills Golf Course", "zip_code": "93953", "distance": 0.5}, {"name": "Spyglass Hill Golf Course", "zip_code": "93953", "distance": 0.8}, {"name": "Spyglass Hill Golf Course", "zip_code": "93953", "distance": 0.8}, {"name": "Dunes Course at Monterey Peninsula Country Club", "zip_code": "93953", "distance": 0.9}, {"name": "Cypress Point Club", "zip_code": "93953", "distance": 1.1}, {"name": "Cypress Point Club", "zip_code": "93953", "distance": 1.1}, {"name": "Golf Links Course at Pebble Beach Golf Links", "zip_code": "93953", "distance": 1.3}, {"name": "The Links at Spanish Bay", "zip_code": "93953", "distance": 1.5}, {"name": "Pacific Grove Municipal Golf Course", "zip_code": "93950", "distance": 3.3}, {"name": "Del Monte Golf Course", "zip_code": "93940", "distance": 4.1}, {"name": "Naval Postgraduate School Golf Course", "zip_code": "93940", "distance": 4.4}, {"name": "West Course at Rancho Canada Golf Club", "zip_code": "93923", "distance": 4.5}, {"name": "Quail Lodge Resort & Golf Club", "zip_code": "93923", "distance": 6.5}, {"name": "The Bayonet Course at Bayonet/Black Horse Golf Course", "zip_code": "93955", "distance": 7.6}, {"name": "Laguna Seca Ranch Golf Club", "zip_code": "93940", "distance": 8.8}, {"name": "Carmel Valley Ranch Resort", "zip_code": "93923", "distance": 9.1}, {"name": "Tehama Golf Club", "zip_code": "93923", "distance": 9.1}, {"name": "Pasadera Country Club", "zip_code": "93940", "distance": 9.6}]}
+        final JSONObject jsonOrigin = new JSONObject(preParse);
+        JSONArray jsonCourseArr = jsonOrigin.getJSONArray("courses");
         try {
 
-            for(int i = 0; i< obj.length();i++){
-                JSONObject jsonobject = obj.getJSONObject(i);
-                //new Course("Pebble Beach", "06902", 4),
-                System.out.println(jsonobject.getString("name"));
-                System.out.println(jsonobject.getString("zip_code"));
-                System.out.println(jsonobject.getString("distance"));
-                //longLatArr[0]=jsonobject.getString("Latitude");
+            for(int i = 0; i< jsonCourseArr.length();i++){
+                JSONObject jsonobject = jsonCourseArr.getJSONObject(i);
 
+                Course localCour = new Course(jsonobject.getString("name"), jsonobject.getString("zip_code"),
+                        jsonobject.getFloat("distance"));
+                courseList.add(localCour);
+                //longLatArr[0]=jsonobject.getString("Latitude");
             }
         } catch (Exception e) {
             System.out.println(e);
             System.out.println("Error on Reading API CALL");
         }
+
         return courseList;
     }
 }

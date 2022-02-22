@@ -31,10 +31,12 @@ public class MainController {
     private void processGolf(String[] longLatArr) throws IOException {
         GolfHandler golfH = new GolfHandler();
         ArrayList<Course> courseList= golfH.courseLookup(longLatArr);
-        if(courseList==null){
+
+        if(courseList==null && courseList.size()>0){
             errText.setText("Error in API Call report bug");
         }else{
-            System.out.println(courseList.get(0));
+            setTable(courseList);
+
         }
     }
 
@@ -52,12 +54,12 @@ public class MainController {
 
     }
 
-    protected void setTable(){
-        table.getItems().addAll(new Course("Winged Foot", "06820", 3),
-                new Course("Pebble Beach", "06902", 4),
-                new Course("Oak Hills", "02131", 5),
-                new Course("Willow Brook", "04321", 6),
-                new Course("Sterling Farms", "09001", 7));
+    protected void setTable(ArrayList<Course> courseList){
+
+        for(int iter = 0; iter<courseList.size();iter++){
+            table.getItems().addAll(courseList.get(iter));
+        }
+
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         zipCol.setCellValueFactory(new PropertyValueFactory<>("zipcode"));
         distCol.setCellValueFactory(new PropertyValueFactory<>("distance"));
