@@ -18,15 +18,18 @@ public class ZipHandler extends Handler{
     private String apiKey;
     private String url;
 
-    private String preZip;
-
     public ZipHandler() throws IOException {
         String[] propArr = getPropValues();
         url = propArr[3];
         apiKey= propArr[1];
     }
 
-    private String makeCall() throws IOException {
+    /**@param preZip This is the zipcode for the apiCAll
+     * @brief This method makes the api call based on the Zipcode parameter
+     * @return Jsonarray as a String
+     * @throws IOException
+     */
+    private String makeCall(String preZip) throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(url+"/?zipcode="+preZip)
@@ -39,23 +42,24 @@ public class ZipHandler extends Handler{
         return Objects.requireNonNull(response.body()).string();
     }
 
-    private void parseStr(String preParse){
-        String lat;
-        String lon;
+    /**
+     * @param preParse: The json array we get from our API call
+     * @return A String array of length two of Lattiude,longitude
+     */
+    private String[] parseStr(String preParse){
+        String[] longLatArr = new String[2];
         final JSONArray obj = new JSONArray(preParse);
         try{
-            JSONObject jsonobject = obj.getJSONObject(5);
-            String name = jsonobject.getString("City");
-            lat = jsonobject.getString("Latitude");
-            lon = jsonobject.getString("Longitude");
+            JSONObject jsonobject = obj.getJSONObject(0);
+            longLatArr[0]=jsonobject.getString("Latitude");
+            longLatArr[1]= jsonobject.getString("Longitude");
         }catch(Exception e){
             System.out.println(e);
-            System.out.println("Error on ZIP API CALL");
+            System.out.println("Error on Reading API CALL");
         }
-
-
-        //System.out.println(preParse);
+        return longLatArr;
     }
+
     /**
      * @param zipcode a zipcode length 6
      * @brief Uses google api to convert a zipcode to longitude and lattitude
@@ -65,10 +69,7 @@ public class ZipHandler extends Handler{
         if(zipcode.length()!=5){
             return null;
         }
-        String[] ans = new String[2];
-        preZip=zipcode;
-        //parseStr(makeCall());
-        parseStr("[{\"ZipCode\":\"6820\",\"City\":\"DARIEN\",\"State\":\"CT\",\"County\":\"FAIRFIELD\",\"AreaCode\":\"203\\/475\",\"CityType\":\"N\",\"CityAliasAbbreviation\":\"\",\"CityAliasName\":\"NOROTON HEIGHTS\",\"Latitude\":\"41.075974\",\"Longitude\":\"-73.481568\",\"TimeZone\":\"5\",\"Elevation\":\"86\",\"CountyFIPS\":\"001\",\"DayLightSaving\":\"Y\",\"PreferredLastLineKey\":\"V20153\",\"ClassificationCode\":\" \",\"MultiCounty\":\" \",\"StateFIPS\":\"9\",\"CityStateKey\":\"V20455\",\"CityAliasCode\":\"\",\"PrimaryRecord\":\" \",\"CityMixedCase\":\"Darien\",\"CityAliasMixedCase\":\"Noroton Heights\",\"StateANSI\":\"9\",\"CountyANSI\":\"001\",\"FacilityCode\":\"N\",\"CityDeliveryIndicator\":\"Y\",\"CarrierRouteRateSortation\":\"D\",\"FinanceNumber\":\"81734\",\"UniqueZIPName\":\"\",\"CountyMixedCase\":\"Fairfield\"},{\"ZipCode\":\"6820\",\"City\":\"DARIEN\",\"State\":\"CT\",\"County\":\"FAIRFIELD\",\"AreaCode\":\"203\\/475\",\"CityType\":\"N\",\"CityAliasAbbreviation\":\"\",\"CityAliasName\":\"TOKENEKE\",\"Latitude\":\"41.075974\",\"Longitude\":\"-73.481568\",\"TimeZone\":\"5\",\"Elevation\":\"86\",\"CountyFIPS\":\"001\",\"DayLightSaving\":\"Y\",\"PreferredLastLineKey\":\"V20153\",\"ClassificationCode\":\" \",\"MultiCounty\":\" \",\"StateFIPS\":\"9\",\"CityStateKey\":\"V20714\",\"CityAliasCode\":\"\",\"PrimaryRecord\":\" \",\"CityMixedCase\":\"Darien\",\"CityAliasMixedCase\":\"Tokeneke\",\"StateANSI\":\"9\",\"CountyANSI\":\"001\",\"FacilityCode\":\"N\",\"CityDeliveryIndicator\":\"Y\",\"CarrierRouteRateSortation\":\"D\",\"FinanceNumber\":\"81734\",\"UniqueZIPName\":\"\",\"CountyMixedCase\":\"Fairfield\"},{\"ZipCode\":\"6820\",\"City\":\"DARIEN\",\"State\":\"CT\",\"County\":\"FAIRFIELD\",\"AreaCode\":\"203\\/475\",\"CityType\":\"N\",\"CityAliasAbbreviation\":\"\",\"CityAliasName\":\"NOROTON\",\"Latitude\":\"41.075974\",\"Longitude\":\"-73.481568\",\"TimeZone\":\"5\",\"Elevation\":\"86\",\"CountyFIPS\":\"001\",\"DayLightSaving\":\"Y\",\"PreferredLastLineKey\":\"V20153\",\"ClassificationCode\":\" \",\"MultiCounty\":\" \",\"StateFIPS\":\"9\",\"CityStateKey\":\"V20453\",\"CityAliasCode\":\"\",\"PrimaryRecord\":\" \",\"CityMixedCase\":\"Darien\",\"CityAliasMixedCase\":\"Noroton\",\"StateANSI\":\"9\",\"CountyANSI\":\"001\",\"FacilityCode\":\"N\",\"CityDeliveryIndicator\":\"Y\",\"CarrierRouteRateSortation\":\"D\",\"FinanceNumber\":\"81734\",\"UniqueZIPName\":\"\",\"CountyMixedCase\":\"Fairfield\"},{\"ZipCode\":\"6820\",\"City\":\"DARIEN\",\"State\":\"CT\",\"County\":\"FAIRFIELD\",\"AreaCode\":\"203\\/475\",\"CityType\":\"P\",\"CityAliasAbbreviation\":\"\",\"CityAliasName\":\"DARIEN\",\"Latitude\":\"41.075974\",\"Longitude\":\"-73.481568\",\"TimeZone\":\"5\",\"Elevation\":\"86\",\"CountyFIPS\":\"001\",\"DayLightSaving\":\"Y\",\"PreferredLastLineKey\":\"V20153\",\"ClassificationCode\":\" \",\"MultiCounty\":\" \",\"StateFIPS\":\"9\",\"CityStateKey\":\"V20153\",\"CityAliasCode\":\"\",\"PrimaryRecord\":\"P\",\"CityMixedCase\":\"Darien\",\"CityAliasMixedCase\":\"Darien\",\"StateANSI\":\"9\",\"CountyANSI\":\"001\",\"FacilityCode\":\"P\",\"CityDeliveryIndicator\":\"Y\",\"CarrierRouteRateSortation\":\"D\",\"FinanceNumber\":\"81734\",\"UniqueZIPName\":\"\",\"CountyMixedCase\":\"Fairfield\"}]\n");
-        return ans;
+        return parseStr(makeCall(zipcode));
+        //return parseStr("[{\"ZipCode\":\"6820\",\"City\":\"DARIEN\",\"State\":\"CT\",\"County\":\"FAIRFIELD\",\"AreaCode\":\"203\\/475\",\"CityType\":\"N\",\"CityAliasAbbreviation\":\"\",\"CityAliasName\":\"NOROTON HEIGHTS\",\"Latitude\":\"41.075974\",\"Longitude\":\"-73.481568\",\"TimeZone\":\"5\",\"Elevation\":\"86\",\"CountyFIPS\":\"001\",\"DayLightSaving\":\"Y\",\"PreferredLastLineKey\":\"V20153\",\"ClassificationCode\":\" \",\"MultiCounty\":\" \",\"StateFIPS\":\"9\",\"CityStateKey\":\"V20455\",\"CityAliasCode\":\"\",\"PrimaryRecord\":\" \",\"CityMixedCase\":\"Darien\",\"CityAliasMixedCase\":\"Noroton Heights\",\"StateANSI\":\"9\",\"CountyANSI\":\"001\",\"FacilityCode\":\"N\",\"CityDeliveryIndicator\":\"Y\",\"CarrierRouteRateSortation\":\"D\",\"FinanceNumber\":\"81734\",\"UniqueZIPName\":\"\",\"CountyMixedCase\":\"Fairfield\"},{\"ZipCode\":\"6820\",\"City\":\"DARIEN\",\"State\":\"CT\",\"County\":\"FAIRFIELD\",\"AreaCode\":\"203\\/475\",\"CityType\":\"N\",\"CityAliasAbbreviation\":\"\",\"CityAliasName\":\"TOKENEKE\",\"Latitude\":\"41.075974\",\"Longitude\":\"-73.481568\",\"TimeZone\":\"5\",\"Elevation\":\"86\",\"CountyFIPS\":\"001\",\"DayLightSaving\":\"Y\",\"PreferredLastLineKey\":\"V20153\",\"ClassificationCode\":\" \",\"MultiCounty\":\" \",\"StateFIPS\":\"9\",\"CityStateKey\":\"V20714\",\"CityAliasCode\":\"\",\"PrimaryRecord\":\" \",\"CityMixedCase\":\"Darien\",\"CityAliasMixedCase\":\"Tokeneke\",\"StateANSI\":\"9\",\"CountyANSI\":\"001\",\"FacilityCode\":\"N\",\"CityDeliveryIndicator\":\"Y\",\"CarrierRouteRateSortation\":\"D\",\"FinanceNumber\":\"81734\",\"UniqueZIPName\":\"\",\"CountyMixedCase\":\"Fairfield\"},{\"ZipCode\":\"6820\",\"City\":\"DARIEN\",\"State\":\"CT\",\"County\":\"FAIRFIELD\",\"AreaCode\":\"203\\/475\",\"CityType\":\"N\",\"CityAliasAbbreviation\":\"\",\"CityAliasName\":\"NOROTON\",\"Latitude\":\"41.075974\",\"Longitude\":\"-73.481568\",\"TimeZone\":\"5\",\"Elevation\":\"86\",\"CountyFIPS\":\"001\",\"DayLightSaving\":\"Y\",\"PreferredLastLineKey\":\"V20153\",\"ClassificationCode\":\" \",\"MultiCounty\":\" \",\"StateFIPS\":\"9\",\"CityStateKey\":\"V20453\",\"CityAliasCode\":\"\",\"PrimaryRecord\":\" \",\"CityMixedCase\":\"Darien\",\"CityAliasMixedCase\":\"Noroton\",\"StateANSI\":\"9\",\"CountyANSI\":\"001\",\"FacilityCode\":\"N\",\"CityDeliveryIndicator\":\"Y\",\"CarrierRouteRateSortation\":\"D\",\"FinanceNumber\":\"81734\",\"UniqueZIPName\":\"\",\"CountyMixedCase\":\"Fairfield\"},{\"ZipCode\":\"6820\",\"City\":\"DARIEN\",\"State\":\"CT\",\"County\":\"FAIRFIELD\",\"AreaCode\":\"203\\/475\",\"CityType\":\"P\",\"CityAliasAbbreviation\":\"\",\"CityAliasName\":\"DARIEN\",\"Latitude\":\"41.075974\",\"Longitude\":\"-73.481568\",\"TimeZone\":\"5\",\"Elevation\":\"86\",\"CountyFIPS\":\"001\",\"DayLightSaving\":\"Y\",\"PreferredLastLineKey\":\"V20153\",\"ClassificationCode\":\" \",\"MultiCounty\":\" \",\"StateFIPS\":\"9\",\"CityStateKey\":\"V20153\",\"CityAliasCode\":\"\",\"PrimaryRecord\":\"P\",\"CityMixedCase\":\"Darien\",\"CityAliasMixedCase\":\"Darien\",\"StateANSI\":\"9\",\"CountyANSI\":\"001\",\"FacilityCode\":\"P\",\"CityDeliveryIndicator\":\"Y\",\"CarrierRouteRateSortation\":\"D\",\"FinanceNumber\":\"81734\",\"UniqueZIPName\":\"\",\"CountyMixedCase\":\"Fairfield\"}]\n");
     }
 }
