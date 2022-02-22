@@ -11,7 +11,7 @@ import static com.parkhurst.golfcoursefinder.PropertyHandler.getPropValues;
  * @author John parkhurst
  */
 
-public class GolfHandler {
+public class GolfHandler extends Handler {
     //Fields
     private String apiKey;
     private String url;

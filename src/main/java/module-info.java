@@ -4,6 +4,7 @@ module com.parkhurst.golfcoursefinder {
     requires okhttp3;
     requires com.google.gson;
     requires annotations;
+    requires org.json;
 
 
     opens com.parkhurst.golfcoursefinder to javafx.fxml;
