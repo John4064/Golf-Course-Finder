@@ -12,21 +12,21 @@ import static com.parkhurst.golfcoursefinder.PropertyHandler.getPropValues;
  */
 
 public class GolfHandler {
+    //Fields
     private String apiKey;
     private String url;
     private float longitude;
     private float latitude;
 
 
-    private void loadProp() throws IOException {
+    public GolfHandler() throws IOException {
         String[] propArr = getPropValues();
         url = propArr[0];
         apiKey= propArr[1];
-        return;
     }
 
+
     public String courseLookup() throws IOException {
-        loadProp();
         //Setup a properties Folder
         OkHttpClient client = new OkHttpClient();
 
