@@ -40,7 +40,7 @@
    <ToolBar fx:id="toolB" layoutX="110.0" layoutY="385.0" prefHeight="61.0" prefWidth="420.0">
      <items>
          <TextField prefHeight="25.0" prefWidth="276.0" />
-          <Button fx:id="submitB" onAction="#onHelloButtonClick" prefHeight="46.0" prefWidth="120.0" text="Submit" />
+          <Button fx:id="submitB" onAction="#onSubmitClick" prefHeight="46.0" prefWidth="120.0" text="Submit" />
      </items>
    </ToolBar>
    <TextArea layoutX="219.0" layoutY="317.0" prefHeight="61.0" prefWidth="203.0" />

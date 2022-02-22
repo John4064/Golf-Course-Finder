@@ -15,23 +15,18 @@ public class PropertyHandler {
     public static String[] getPropValues() throws IOException {
         String[] propArr = new String[5];
         try (InputStream input = new FileInputStream("src/main/resources/com/parkhurst/golfcoursefinder/config.properties")) {
-
             Properties prop = new Properties();
-
             // load a properties file
             prop.load(input);
-
-            // get the property value and print it out
-            System.out.println(prop.getProperty("GOLFURL"));
-            System.out.println(prop.getProperty("APIKEY"));
-            System.out.println(prop.getProperty("SECRETKEY"));
-            System.out.println(prop.getProperty("zipURL"));
+            // get the property value and save it 0 golfURL 1 KEY 2 SECRET KEY 3 zipURL
+            propArr[0]= prop.getProperty("GOLFURL");
+            propArr[1]= prop.getProperty("APIKEY");
+            propArr[2] = prop.getProperty("SECRETKEY");
+            propArr[3] = prop.getProperty("zipURL");
 
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
-
         return propArr;
     }
 

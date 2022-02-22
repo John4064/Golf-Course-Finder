@@ -3,25 +3,38 @@ package com.parkhurst.golfcoursefinder;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
 import java.io.IOException;
 import java.util.Objects;
+import static com.parkhurst.golfcoursefinder.PropertyHandler.getPropValues;
 
 /**
  * @author John parkhurst
  */
 
 public class GolfHandler {
+    private String apiKey;
+    private String url;
+    private float longitude;
+    private float latitude;
 
-    public static String courseLookup() throws IOException {
+
+    private void loadProp() throws IOException {
+        String[] propArr = getPropValues();
+        url = propArr[0];
+        apiKey= propArr[1];
+        return;
+    }
+
+    public String courseLookup() throws IOException {
+        loadProp();
         //Setup a properties Folder
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("https://golf-course-finder.p.rapidapi.com/courses?radius=10&lat=-121.95035631683683&lng=36.56910381018662")
+                .url(url+"?radius=10&lat=-121.95035631683683&lng=36.56910381018662")
                 .get()
                 .addHeader("x-rapidapi-host", "golf-course-finder.p.rapidapi.com")
-                .addHeader("x-rapidapi-key", "4350144f3emshedb34f8e05da506p19d449jsn72b1b5861bf1")
+                .addHeader("x-rapidapi-key", apiKey)
                 .build();
 
         Response response = client.newCall(request).execute();
