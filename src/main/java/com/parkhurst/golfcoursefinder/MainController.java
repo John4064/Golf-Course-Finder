@@ -4,13 +4,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import com.parkhurst.golfcoursefinder.ZipHandler.*;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Hashtable;
 
-import static com.parkhurst.golfcoursefinder.ZipHandler.*;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @author John parkhurst
@@ -18,7 +16,7 @@ import static com.parkhurst.golfcoursefinder.ZipHandler.*;
 
 public class MainController {
     @FXML
-    private Label welcomeText;
+    private Label errText;
     @FXML
     private TableView<Course> table;
     @FXML
@@ -27,23 +25,31 @@ public class MainController {
     private TableColumn<Course, String> zipCol;
     @FXML
     private TableColumn<Course, String> distCol;
-
     @FXML
-    public void initialize() throws IOException {
-        String response = "{\"courses\": [{\"name\": \"Golf Links Course at Pebble Beach Golf Links\", \"zip_code\": \"93953\", \"distance\": 0.0}, {\"name\": \"Cypress Point Club\", \"zip_code\": \"93953\", \"distance\": 0.3}, {\"name\": \"Cypress Point Club\", \"zip_code\": \"93953\", \"distance\": 0.3}, {\"name\": \"Spyglass Hill Golf Course\", \"zip_code\": \"93953\", \"distance\": 1.0}, {\"name\": \"Spyglass Hill Golf Course\", \"zip_code\": \"93953\", \"distance\": 1.0}, {\"name\": \"Poppy Hills Golf Course\", \"zip_code\": \"93953\", \"distance\": 1.2}, {\"name\": \"Dunes Course at Monterey Peninsula Country Club\", \"zip_code\": \"93953\", \"distance\": 2.2}, {\"name\": \"The Links at Spanish Bay\", \"zip_code\": \"93953\", \"distance\": 2.9}, {\"name\": \"West Course at Rancho Canada Golf Club\", \"zip_code\": \"93923\", \"distance\": 3.9}, {\"name\": \"Pacific Grove Municipal Golf Course\", \"zip_code\": \"93950\", \"distance\": 4.6}, {\"name\": \"Del Monte Golf Course\", \"zip_code\": \"93940\", \"distance\": 4.7}, {\"name\": \"Naval Postgraduate School Golf Course\", \"zip_code\": \"93940\", \"distance\": 5.0}, {\"name\": \"Quail Lodge Resort & Golf Club\", \"zip_code\": \"93923\", \"distance\": 6.0}, {\"name\": \"The Bayonet Course at Bayonet/Black Horse Golf Course\", \"zip_code\": \"93955\", \"distance\": 8.4}, {\"name\": \"Carmel Valley Ranch Resort\", \"zip_code\": \"93923\", \"distance\": 8.7}, {\"name\": \"Tehama Golf Club\", \"zip_code\": \"93923\", \"distance\": 8.8}, {\"name\": \"Laguna Seca Ranch Golf Club\", \"zip_code\": \"93940\", \"distance\": 9.0}, {\"name\": \"Pasadera Country Club\", \"zip_code\": \"93940\", \"distance\": 9.8}]}";
-        Hashtable <String,String> myHash = new Hashtable<String,String>();
-        //ZipHandler zipH = new ZipHandler();
-        //41.07597,-73.48157
-        //System.out.println(Arrays.toString(zipH.zipToLL("90001")));
-        //zipH.zipToLL(desiredZip) gives u it
+    private TextField subField;
 
+    private void processGolf(String[] longLatArr) throws IOException {
+        GolfHandler golfH = new GolfHandler();
+        ArrayList<Course> courseList= golfH.courseLookup(longLatArr);
+        if(courseList==null){
+            errText.setText("Error in API Call report bug");
+        }else{
+            System.out.println(courseList.get(0));
+        }
     }
 
     @FXML
     protected void onSubmitClick() throws IOException {
-        
+        String fieldText=subField.getText();
+        if(fieldText.length()!=5){
+            errText.setText("Make sure the zipcode is 5 charachters long");
+        }else{
+            //get string array
+            ZipHandler zipH = new ZipHandler();
+            String[] longLatArr = zipH.zipToLL(fieldText);
+            processGolf(longLatArr);
+        }
 
-        welcomeText.setText("Kobe Bryant in Prime");
     }
 
     protected void setTable(){

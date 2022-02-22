@@ -8,11 +8,12 @@
     -fx-border-color: #3e4491;
     -fx-text-fill: #e55555;
 }
-
+.label{
+    -fx-text-fill: #e55555;
+}
 .button{
     -fx-font-size: 24px;
     -fx-background-color: #1a1b4b;
-
     -fx-text-fill: #e55555;
 }
 .button:hover {

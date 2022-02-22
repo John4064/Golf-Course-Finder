@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
@@ -14,7 +13,7 @@
 
 <AnchorPane fx:id="mainpane" prefHeight="480.0" prefWidth="640.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.parkhurst.golfcoursefinder.MainController">
 
-    <Label fx:id="welcomeText" />
+    <Label fx:id="errText" layoutX="204.0" layoutY="341.0" />
    <ImageView fitHeight="45.0" fitWidth="24.0" layoutX="14.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@golf.png" />
@@ -39,11 +38,10 @@
    </TableView>
    <ToolBar fx:id="toolB" layoutX="110.0" layoutY="385.0" prefHeight="61.0" prefWidth="420.0">
      <items>
-         <TextField prefHeight="25.0" prefWidth="276.0" />
+         <TextField fx:id="subField" prefHeight="25.0" prefWidth="276.0" />
           <Button fx:id="submitB" onAction="#onSubmitClick" prefHeight="46.0" prefWidth="120.0" text="Submit" />
      </items>
    </ToolBar>
-   <TextArea layoutX="219.0" layoutY="317.0" prefHeight="61.0" prefWidth="203.0" />
    <Rectangle fx:id="titleRect" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" layoutX="80.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
    <Label fx:id="title" layoutX="246.0" layoutY="26.0" text="Golf Course Finder" />
 </AnchorPane>
