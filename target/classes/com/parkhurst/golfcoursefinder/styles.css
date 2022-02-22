@@ -21,6 +21,7 @@
 }
 .button:pressed {
     -fx-background-color: #3e4491;
+    -fx-scale-y: 1.1;
 }
 .table-view{
     -fx-background-color: #292a73;
