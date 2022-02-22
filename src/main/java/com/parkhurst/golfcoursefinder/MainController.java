@@ -28,6 +28,11 @@ public class MainController {
     @FXML
     private TextField subField;
 
+    /**
+     * @param longLatArr A string array of the longitude and lattitude of the desired zipcode
+     * @brief It takes our longitude/lattidue we got earlier and communicates with the golfapi to get course data
+     * @throws IOException
+     */
     private void processGolf(String[] longLatArr) throws IOException {
         GolfHandler golfH = new GolfHandler();
         ArrayList<Course> courseList= golfH.courseLookup(longLatArr);
@@ -54,6 +59,10 @@ public class MainController {
 
     }
 
+    /**
+     * @param courseList An arraylist of course objects
+     * @brief Given the courseList it will add all the course objects to the table
+     */
     protected void setTable(ArrayList<Course> courseList){
 
         for(int iter = 0; iter<courseList.size();iter++){
