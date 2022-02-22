@@ -41,20 +41,7 @@ public class MainController {
 
     @FXML
     protected void onSubmitClick() throws IOException {
-        /*
-        //String temp = GolfHandler.courseLookup();
-        FileReader reader = new FileReader("config.properties");
-
-        // create properties object
-        Properties p = new Properties();
-
-        // Add a wrapper around reader object
-        p.load(reader);
-
-        */
-        //PropertyHandler testHand = new PropertyHandler();
-        //System.out.println(testHand.getPropValues());
-        //System.out.println(GolfHandler.courseLookup());
+        
 
         welcomeText.setText("Kobe Bryant in Prime");
     }
