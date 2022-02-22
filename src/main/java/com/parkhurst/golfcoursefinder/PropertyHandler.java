@@ -1,4 +1,5 @@
 package com.parkhurst.golfcoursefinder;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,32 +11,27 @@ import java.util.Properties;
  * @brief handles the properties files
  */
 public class PropertyHandler {
-    String result = "";
-    InputStream inputStream;
-    public String getPropValues() throws IOException {
-        try {
+
+    public static String getPropValues() throws IOException {
+        try (InputStream input = new FileInputStream("src/main/resources/com/parkhurst/golfcoursefinder/config.properties")) {
+
             Properties prop = new Properties();
-            String propFileName = "config.properties";
 
-
-            inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
-
-            if (inputStream != null) {
-                prop.load(inputStream);
-            } else {
-                throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
-            }
+            // load a properties file
+            prop.load(input);
 
             // get the property value and print it out
-            String user = prop.getProperty("username");
-            String pass = prop.getProperty("password");
-            System.out.println(this.result+ " by user=" + user);
-        } catch (Exception e) {
-            System.out.println("Exception: " + e);
-        } finally {
-            inputStream.close();
+            System.out.println(prop.getProperty("GOLFURL"));
+            System.out.println(prop.getProperty("APIKEY"));
+            System.out.println(prop.getProperty("SECRETKEY"));
+            System.out.println(prop.getProperty("zipURL"));
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
-        return this.result;
+
+
+        return "";
     }
 
 }
