@@ -12,7 +12,8 @@ import java.util.Properties;
  */
 public class PropertyHandler {
 
-    public static String getPropValues() throws IOException {
+    public static String[] getPropValues() throws IOException {
+        String[] propArr = new String[5];
         try (InputStream input = new FileInputStream("src/main/resources/com/parkhurst/golfcoursefinder/config.properties")) {
 
             Properties prop = new Properties();
@@ -31,7 +32,7 @@ public class PropertyHandler {
         }
 
 
-        return "";
+        return propArr;
     }
 
 }
