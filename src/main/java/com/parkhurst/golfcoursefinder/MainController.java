@@ -37,11 +37,12 @@ public class MainController {
         GolfHandler golfH = new GolfHandler();
         ArrayList<Course> courseList= golfH.courseLookup(longLatArr);
 
-        if(courseList==null && courseList.size()>0){
+        if(courseList==null ){
             errText.setText("Error in API Call report bug");
-        }else{
+        }else if(courseList.size()==0){
+            errText.setText("No Courses were found at the desired location!");
+        } else{
             setTable(courseList);
-
         }
     }
 

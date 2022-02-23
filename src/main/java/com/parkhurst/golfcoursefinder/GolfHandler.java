@@ -29,9 +29,19 @@ public class GolfHandler extends Handler {
         apiKey= propArr[1];
     }
 
+    /**
+     * @brief formats the string for the apiurl with given lattitude and longitude
+     * @return the url formatted
+     */
     private String urlBuilder(){
         return String.format("?radius=10&lat=%s&lng=%s",latitude,longitude);
     }
+
+    /**
+     * @brief This method just handles API calls to the desired destination!
+     * @return Returns the jsonobject as a string
+     * @throws IOException
+     */
     private String makeCall() throws IOException{
         OkHttpClient client = new OkHttpClient();
 
@@ -45,6 +55,13 @@ public class GolfHandler extends Handler {
         return Objects.requireNonNull(response.body()).string();
     }
 
+    /**
+     * @param longLatArr
+     * @brief This is the meat of the handler it is what is called and uses the data given to communicate/parse
+     * /process/save
+     * @return Returns an arraylist of courseObjects
+     * @throws IOException
+     */
     public ArrayList<Course> courseLookup(String[] longLatArr) throws IOException {
         //Setup a properties Folder
         latitude = longLatArr[1];
