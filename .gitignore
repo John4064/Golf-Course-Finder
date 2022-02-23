@@ -23,3 +23,7 @@
 hs_err_pid*
 .idea/misc.xml
 src/main/resources/com/parkhurst/golfcoursefinder/config.properties
+.idea/artifacts/Golf_Course_Finder_jar.xml
+src/main/java/META-INF/MANIFEST.MF
+src/main/resources/com/parkhurst/golfcoursefinder/config.properties
+target/classes/com/parkhurst/golfcoursefinder/config.properties
