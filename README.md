@@ -82,7 +82,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]
+[![Product Name Screen Shot]][product-screenshot]
 <img src="/images/blankmain.png" alt="blank" width="60" height="40">
 <img src="/images/fullmain.png" alt="full" width="60" height="40">
 
