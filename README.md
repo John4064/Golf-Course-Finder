@@ -82,9 +82,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot]][product-screenshot]
-<img src="/images/blankmain.png" alt="blank" width="60" height="40">
-<img src="/images/fullmain.png" alt="full" width="60" height="40">
+
+<img src="/images/blankmain.png" alt="blank" width="120" height="80">
+<img src="/images/fullmain.png" alt="full" width="120" height="80">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
