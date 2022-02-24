@@ -21,12 +21,14 @@ public class GolfHandler extends Handler {
     private String url;
     private String longitude;
     private String latitude;
+    private int distRange;
 
 
     public GolfHandler() throws IOException {
         String[] propArr = getPropValues();
         url = propArr[0];
         apiKey= propArr[1];
+        distRange = 25;
     }
 
     /**
@@ -34,7 +36,7 @@ public class GolfHandler extends Handler {
      * @return the url formatted
      */
     private String urlBuilder(){
-        return String.format("?radius=10&lat=%s&lng=%s",latitude,longitude);
+        return String.format("?radius=%d&lat=%s&lng=%s",distRange,latitude,longitude);
     }
 
     /**
