@@ -44,4 +44,5 @@
    </ToolBar>
    <Rectangle fx:id="titleRect" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" layoutX="80.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
    <Label fx:id="title" layoutX="246.0" layoutY="26.0" text="Golf Course Finder" />
+   <Button fx:id="clear" onAction="#onClearClick" layoutX="534.0" layoutY="255.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="92.0" text="Clear" />
 </AnchorPane>

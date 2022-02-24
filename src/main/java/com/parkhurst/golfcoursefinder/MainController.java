@@ -47,6 +47,12 @@ public class MainController {
     }
 
     @FXML
+    protected void onClearClick() throws IOException{
+        table.getItems().clear();
+    }
+
+
+    @FXML
     protected void onSubmitClick() throws IOException {
         String fieldText=subField.getText();
         if(fieldText.length()!=5){
