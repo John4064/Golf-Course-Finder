@@ -82,9 +82,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot](images/blankmain.png)
+[![Product Name Screen Shot][product-screenshot]
+<img src="/src/main/resources/com/parkhurst/golfcoursefinder/golf.png" alt="Logo" width="80" height="80">
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `john4064`, `Golf-Course-Finder`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `john4064`, `Golf-Course-Finder`, `twitter_handle`, `john-parkhurst-722a62146`, `jparkhurst120@gmail.com`, `jparkhurst120@gmail.com`, `Golf-Course-Finder`, `Using the Golf Course Finder API we will find and get all golf courses in a certain range of a zipcode. `
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -92,14 +93,10 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
+* [Java 17](https://www.java.com/en/)
 * [OkHttp](https://square.github.io/okhttp/)
 * [JavaFX](https://openjfx.io/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -194,7 +191,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-John Parkhurst - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+John Parkhurst - [@twitter_handle](https://twitter.com/twitter_handle) - jparkhurst120@gmail.com@jparkhurst120@gmail.com.com
 
 Project Link: [https://github.com/john4064/Golf-Course-Finder](https://github.com/john4064/Golf-Course-Finder)
 
