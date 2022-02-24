@@ -152,8 +152,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [ ] Functionality
-  - [/] Basic Search
-  - [ ]  Slider to increase/decrease range
+  - [x] Basic Search
+  - [ ] Slider to increase/decrease range
 - [ ] Connect to Yelp API for more info on specific courses
 - [ ] Clickable cell links
 - [ ] Potential futures
