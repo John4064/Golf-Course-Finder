@@ -83,9 +83,8 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]
-<img src="/src/main/resources/com/parkhurst/golfcoursefinder/golf.png" alt="Logo" width="80" height="80">
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `john4064`, `Golf-Course-Finder`, `twitter_handle`, `john-parkhurst-722a62146`, `jparkhurst120@gmail.com`, `jparkhurst120@gmail.com`, `Golf-Course-Finder`, `Using the Golf Course Finder API we will find and get all golf courses in a certain range of a zipcode. `
+<img src="/images/blankmain.png" alt="blank" width="60" height="40">
+<img src="/images/fullmain.png" alt="full" width="60" height="40">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -207,9 +206,8 @@ Project Link: [https://github.com/john4064/Golf-Course-Finder](https://github.co
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Golf API](https://rapidapi.com/golfambit-golfambit-default/api/golf-course-finder/)
+* [Zipcode API](https://rapidapi.com/dkr73/api/us-zip-code-information/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
