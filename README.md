@@ -96,7 +96,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 * [Java 17](https://www.java.com/en/)
 * [OkHttp](https://square.github.io/okhttp/)
 * [JavaFX](https://openjfx.io/)
-
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [JUnit 5](https://junit.org/junit5/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -150,10 +151,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Functionality
+  - [/] Basic Search
+  - [ ]  Slider to increase/decrease range
+- [ ] Connect to Yelp API for more info on specific courses
+- [ ] Clickable cell links
+- [ ] Potential futures
+  - [ ] Convert to web app spring boot
+
 
 See the [open issues](https://github.com/john4064/Golf-Course-Finder/issues) for a full list of proposed features (and known issues).
 
