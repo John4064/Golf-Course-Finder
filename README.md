@@ -83,8 +83,8 @@
 ## About The Project
 
 
-<img src="/images/blankmain.png" alt="blank" width="480" height="240">
-<img src="/images/fullmain.png" alt="full" width="480" height="240">
+<img src="/images/blankmain.png" alt="blank" width="640" height="320">
+<img src="/images/fullmain.png" alt="full" width="640" height="320">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
