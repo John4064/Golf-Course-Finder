@@ -22,8 +22,7 @@ public class ZipHandler extends Handler{
         String[] propArr = getPropValues();
         //Check if null
         url = propArr[3];
-        System.out.println(apiKey);
-
+        apiKey= propArr[1];
         //apiKey= propArr[1];
     }
 
