@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -61,5 +62,16 @@ class GolfHandlerTest {
         String tempS=golfH.urlBuilder();
         System.out.println(String.format("Expected %s and got %s","?radius=5&lat=-72.5905&lng=42.1015",tempS));
         assertEquals(tempS,"?radius=5&lat=-72.5905&lng=42.1015");
+    }
+
+    @Tag("LongLat")
+    @Test
+    void testLL(){
+        System.out.println("Executing Test 4");
+        String[] longLatArr = new String[2];
+        longLatArr[1]="-50.4321";
+        longLatArr[0]="32.2115";
+        golfH.setLongLat(longLatArr);
+        assertEquals(Arrays.toString(golfH.getLongLat()),Arrays.toString(longLatArr));
     }
 }

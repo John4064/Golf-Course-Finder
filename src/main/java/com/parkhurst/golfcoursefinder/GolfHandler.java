@@ -17,7 +17,7 @@ import static com.parkhurst.golfcoursefinder.PropertyLoader.getPropValues;
 
 public class GolfHandler extends Handler {
     //Fields
-    private String apiKey;
+    private final String apiKey;
     private String url;
     private String longitude;
     private String latitude;
