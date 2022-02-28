@@ -118,14 +118,14 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [https://rapidapi.com](https://rapidapi.com/)
 2. Clone the repo
    ```sh
    git clone https://github.com/john4064/Golf-Course-Finder.git
    ```
-3. Install NPM packages
+3. Install Latest version of Java
    ```sh
-   npm install
+   npm install node-java-maven
    ```
 4. Enter your API KEY in `config.properties`
    ```properties
