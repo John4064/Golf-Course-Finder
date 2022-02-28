@@ -36,7 +36,7 @@ public class GolfHandler extends Handler {
      * @brief formats the string for the apiurl with given lattitude and longitude
      * @return the url formatted
      */
-    private String urlBuilder(){
+    protected String urlBuilder(){
         return String.format("?radius=%d&lat=%s&lng=%s",distRange,latitude,longitude);
     }
 
@@ -106,5 +106,35 @@ public class GolfHandler extends Handler {
     protected void setDistance(int newDist){
         distRange = newDist;
         return;
+    }
+
+    /**
+     * @brief A method purely existing for testing purposes
+     * @return Returns the distance value
+     */
+    protected int getDistance(){
+        return distRange;
+    }
+
+    /**
+     * @param longLatArr is the String Array of long/lattitude
+     * @brief A method tht changes the longitude and lattitude
+    */
+    protected void setLongLat(String[] longLatArr){
+        latitude = longLatArr[1];
+        longitude = longLatArr[0];
+        return;
+    }
+
+    /**
+     * @brief for testing purposes gets the longitude and lattitude values
+     * @return a string array of the longitude lattitude.
+     */
+    protected String[] getLongLat(){
+        //Lat = index 1 long = index 0
+        String[] llArr = new String[2];
+        llArr[0]= longitude;
+        llArr[1]= latitude;
+        return llArr;
     }
 }
