@@ -32,8 +32,9 @@ public class MainController {
      * @brief It takes our longitude/lattidue we got earlier and communicates with the golfapi to get course data
      * @throws IOException
      */
-    private void processGolf(String[] longLatArr) throws IOException {
+    private void processGolf(String[] longLatArr, int distVal) throws IOException {
         GolfHandler golfH = new GolfHandler();
+        golfH.setDistance(distVal);
         ArrayList<Course> courseList= golfH.courseLookup(longLatArr);
 
         if(courseList==null ){
@@ -60,7 +61,7 @@ public class MainController {
             //get string array
             ZipHandler zipH = new ZipHandler();
             String[] longLatArr = zipH.zipToLL(fieldText);
-            processGolf(longLatArr);
+            processGolf(longLatArr, (int) distSlid.getValue());
         }
 
     }

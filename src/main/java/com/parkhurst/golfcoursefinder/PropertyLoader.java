@@ -1,16 +1,14 @@
 package com.parkhurst.golfcoursefinder;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 import java.util.Properties;
 
 /**
  * @author John parkhurst
  * @brief handles the properties files
  */
-public class PropertyHandler{
+public class PropertyLoader {
 
 
     public static String[] getPropValues() throws IOException {

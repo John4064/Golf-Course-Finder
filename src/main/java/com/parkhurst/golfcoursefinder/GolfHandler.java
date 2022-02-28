@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
-import static com.parkhurst.golfcoursefinder.PropertyHandler.getPropValues;
+import static com.parkhurst.golfcoursefinder.PropertyLoader.getPropValues;
 
 /**
  * @author John parkhurst
@@ -103,7 +103,7 @@ public class GolfHandler extends Handler {
     /**@param newDist The new desired distanced
      * @brief changes the distance the golf api searchs
      */
-    public void setDistance(int newDist){
+    protected void setDistance(int newDist){
         distRange = newDist;
         return;
     }

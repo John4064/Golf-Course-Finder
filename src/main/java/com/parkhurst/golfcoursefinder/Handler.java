@@ -2,7 +2,7 @@ package com.parkhurst.golfcoursefinder;
 
 import java.io.IOException;
 
-import static com.parkhurst.golfcoursefinder.PropertyHandler.getPropValues;
+import static com.parkhurst.golfcoursefinder.PropertyLoader.getPropValues;
 
 /**
  * @author John Parkhurst

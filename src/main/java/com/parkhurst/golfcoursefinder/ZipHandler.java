@@ -12,7 +12,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Objects;
 
-import static com.parkhurst.golfcoursefinder.PropertyHandler.getPropValues;
+import static com.parkhurst.golfcoursefinder.PropertyLoader.getPropValues;
 
 public class ZipHandler extends Handler{
     private String apiKey;
