@@ -58,11 +58,14 @@
 .table-view .virtual-flow .scroll-bar:horizontal .thumb {
     -fx-background-color: linear-gradient(to bottom, #1a1b4b, #3e4491);
 }
-.slider{
-    -fx-background-color: linear-gradient(to bottom, #212c5a, #2B386D);
-    -fx-text-fill: #e55555;
+.slider .axis{
+    -fx-background-color: linear-gradient(to bottom, #23255b, #2d306e);
+    -fx-tick-label-fill: #e55555;
+    -fx-tick-length: 10px;
 }
-
+.slider .track{
+    -fx-background-color: #e55555;
+}
 
 
 #titleRect{
