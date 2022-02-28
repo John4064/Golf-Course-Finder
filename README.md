@@ -140,9 +140,15 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<h4 align="left">1.</h4>
+<img src="/images/blankmain.png" alt="blank" width="540" height="300">
+Use the slider to determine what distance from the location to you want to search. Enter in your zipcode as 5 charachters. For example 9321 would be 06820. Must be a US zipcode
+<h4 align="left">2.</h4>
+<img src="/images/fullmain.png" alt="full" width="540" height="300">
+Press submit and you will have a filled table of golf courses located within the distance range. 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+
+For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
