@@ -99,4 +99,12 @@ public class GolfHandler extends Handler {
 
         return courseList;
     }
+
+    /**@param newDist The new desired distanced
+     * @brief changes the distance the golf api searchs
+     */
+    public void setDistance(int newDist){
+        distRange = newDist;
+        return;
+    }
 }
