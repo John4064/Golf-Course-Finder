@@ -27,3 +27,4 @@ src/main/resources/com/parkhurst/golfcoursefinder/config.properties
 src/main/java/META-INF/MANIFEST.MF
 src/main/resources/com/parkhurst/golfcoursefinder/config.properties
 target/classes/com/parkhurst/golfcoursefinder/config.properties
+src/main/resources/com/parkhurst/golfcoursefinder/config.properties
