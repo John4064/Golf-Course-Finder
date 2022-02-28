@@ -22,7 +22,9 @@ public class ZipHandler extends Handler{
         String[] propArr = getPropValues();
         //Check if null
         url = propArr[3];
-        apiKey= propArr[1];
+        System.out.println(apiKey);
+
+        //apiKey= propArr[1];
     }
 
     /**@param preZip This is the zipcode for the apiCAll

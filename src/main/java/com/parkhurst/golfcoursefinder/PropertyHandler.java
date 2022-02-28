@@ -10,7 +10,8 @@ import java.util.Properties;
  * @author John parkhurst
  * @brief handles the properties files
  */
-public class PropertyHandler extends Handler {
+public class PropertyHandler{
+
 
     public static String[] getPropValues() throws IOException {
         String[] propArr = new String[5];
