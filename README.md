@@ -141,7 +141,7 @@ This is an example of how to list things you need to use the software and how to
 ## Usage
 
 <h4 align="left">1.</h4>
-Use the slider to determine what distance from the location to you want to search. Enter in your zipcode as 5 charachters. For example 9321 would be 06820. Must be a US zipcode
+Use the slider to determine what distance from the location to you want to search. Enter in your zipcode as 5 charachters. For example 9321 would be 09321. Must be a US zipcode
 <img src="/images/blankmain.png" alt="blank" width="540" height="300">
 
 <h4 align="left">2.</h4>
