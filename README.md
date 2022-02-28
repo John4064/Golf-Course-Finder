@@ -82,9 +82,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
-<img src="/images/blankmain.png" alt="blank" width="640" height="320">
-<img src="/images/fullmain.png" alt="full" width="640" height="320">
+<h4 align="left">Empty User Interface</h4>
+<img src="/images/blankmain.png" alt="blank" width="540" height="300">
+<h4 align="left">Full Table User Interface</h4>
+<img src="/images/fullmain.png" alt="full" width="540" height="300">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -118,14 +119,14 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [https://rapidapi.com](https://rapidapi.com/)
 2. Clone the repo
    ```sh
    git clone https://github.com/john4064/Golf-Course-Finder.git
    ```
-3. Install NPM packages
+3. Install Latest version of Java
    ```sh
-   npm install
+   npm install node-java-maven
    ```
 4. Enter your API KEY in `config.properties`
    ```properties
@@ -150,9 +151,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Functionality
+- [x] Functionality
   - [x] Basic Search
-  - [ ] Slider to increase/decrease range
+  - [x] Slider to increase/decrease range
 - [ ] Connect to Yelp API for more info on specific courses
 - [ ] Clickable cell links
 - [ ] Potential futures
