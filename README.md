@@ -82,10 +82,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<h4 align="center">Empty User Interface</h4>
-<img  align="center" src="/images/blankmain.png" alt="blank" width="540" height="300">
-<h4 align="center">Full Table User Interface</h4>
-<img  align="center" src="/images/fullmain.png" alt="full" width="540" height="300">
+<h4 align="left">Empty User Interface</h4>
+<img src="/images/blankmain.png" alt="blank" width="540" height="300">
+<h4 align="left">Full Table User Interface</h4>
+<img src="/images/fullmain.png" alt="full" width="540" height="300">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
