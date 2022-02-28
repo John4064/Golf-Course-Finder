@@ -20,6 +20,7 @@ public class ZipHandler extends Handler{
 
     public ZipHandler() throws IOException {
         String[] propArr = getPropValues();
+        //Check if null
         url = propArr[3];
         apiKey= propArr[1];
     }

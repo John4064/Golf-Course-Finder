@@ -26,6 +26,7 @@ public class GolfHandler extends Handler {
 
     public GolfHandler() throws IOException {
         String[] propArr = getPropValues();
+        //Check if null
         url = propArr[0];
         apiKey= propArr[1];
         distRange = 25;

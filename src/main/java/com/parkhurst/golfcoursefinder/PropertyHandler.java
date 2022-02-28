@@ -27,7 +27,11 @@ public class PropertyHandler extends Handler {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return propArr;
+        if(propArr[1].length()>40){
+            return propArr;
+        }else{
+            return null;
+        }
     }
 
 }
