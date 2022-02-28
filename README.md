@@ -150,9 +150,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Functionality
+- [x] Functionality
   - [x] Basic Search
-  - [ ] Slider to increase/decrease range
+  - [x] Slider to increase/decrease range
 - [ ] Connect to Yelp API for more info on specific courses
 - [ ] Clickable cell links
 - [ ] Potential futures
