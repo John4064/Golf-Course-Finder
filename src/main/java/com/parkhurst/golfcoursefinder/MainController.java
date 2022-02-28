@@ -1,10 +1,7 @@
 package com.parkhurst.golfcoursefinder;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
@@ -27,6 +24,8 @@ public class MainController {
     private TableColumn<Course, String> distCol;
     @FXML
     private TextField subField;
+    @FXML
+    private Slider distSlid;
 
     /**
      * @param longLatArr A string array of the longitude and lattitude of the desired zipcode
