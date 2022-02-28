@@ -217,6 +217,7 @@ Project Link: [https://github.com/john4064/Golf-Course-Finder](https://github.co
 
 * [Golf API](https://rapidapi.com/golfambit-golfambit-default/api/golf-course-finder/)
 * [Zipcode API](https://rapidapi.com/dkr73/api/us-zip-code-information/)
+* [Icon](https://icons8.com/icon/b6RClyMtZuOc/golf)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
