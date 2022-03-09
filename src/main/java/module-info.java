@@ -2,7 +2,6 @@ module com.parkhurst.golfcoursefinder {
     requires javafx.controls;
     requires javafx.fxml;
     requires okhttp3;
-    requires com.google.gson;
     requires annotations;
     requires org.json;
 

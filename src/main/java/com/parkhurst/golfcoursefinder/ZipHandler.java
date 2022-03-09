@@ -31,6 +31,7 @@ public class ZipHandler extends Handler{
      * @return Jsonarray as a String
      * @throws IOException
      */
+    @NotNull
     private String makeCall(String preZip) throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
